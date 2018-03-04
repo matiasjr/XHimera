@@ -1,0 +1,26 @@
+[Unit]
+Description=XHimera's distributed currency daemon
+After=network.target
+
+[Service]
+User=xhimera
+Group=xhimera
+
+Type=forking
+PIDFile=/var/lib/xhimerad/xhimerad.pid
+
+ExecStart=/usr/bin/xhimerad -daemon -pid=/var/lib/xhimerad/xhimerad.pid \
+          -conf=/etc/xhimera/xhimera.conf -datadir=/var/lib/xhimerad
+
+ExecStop=-/usr/bin/xhimera-cli -conf=/etc/xhimera/xhimera.conf \
+         -datadir=/var/lib/xhimerad stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XHimera
+Comment=XHimera P2P Cryptocurrency
+Comment[fr]=XHimera, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=XHimera, eşten eşe kriptografik sanal para birimi
+Exec=xhimera-qt %u
+Terminal=false
+Type=Application
+Icon=xhimera128
+MimeType=x-scheme-handler/xhimera;
+Categories=Office;Finance;
