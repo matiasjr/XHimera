@@ -16,7 +16,6 @@ parts:
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
         apt update
         apt upgrade -yy
-    plugin: make
       build-packages:
         - build-essential 
         - libtool 
