@@ -6,23 +6,23 @@ This is a compilation of XHimera Wallet for VPS that use Ubuntu 16.04, and to co
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 parts:
-	prepare:
-  	plugin: nil
-			prepare: |
-				echo "deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+  prepare:
+    plugin: nil
+		  prepare: |
+        echo "deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
         echo "deb-src http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list 
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
         apt update
         apt upgrade -yy
-      build-packages:
-        - build-essential 
-        - libtool 
-        - autotools-dev 
+        build-packages:
+        - build-essential
+        - libtool
+        - autotools-dev
         - autoconf
-        - pkg-config 
+        - pkg-config
         - libssl-dev
         - software-properties-common
-        - libdb4.8-dev 
+        - libdb4.8-dev
         - libdb4.8++-dev
         - libboost-all-dev
         - libminiupnpc-dev
